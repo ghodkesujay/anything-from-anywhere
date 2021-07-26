@@ -16,6 +16,9 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
+import java.util.logging.*;
+
+
 /**
  *
  * @author sujayghodke
@@ -29,6 +32,9 @@ public class ViewOrderJPanel extends javax.swing.JPanel {
     
     private UserAccount account;
     private AFASystem system;
+    
+    private final static Logger logr = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+    
     ViewOrderJPanel(JPanel userProcessContainer,AFASystem system, UserAccount account) {
         initComponents();
         System.out.print(system);
@@ -174,6 +180,7 @@ public class ViewOrderJPanel extends javax.swing.JPanel {
         else
         JOptionPane.showMessageDialog(null,"Please select an order ");
         
+        logr.info("Cancel Order Button clicked");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void backjButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backjButton1ActionPerformed

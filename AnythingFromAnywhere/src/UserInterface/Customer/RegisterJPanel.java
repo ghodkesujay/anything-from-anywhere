@@ -14,6 +14,8 @@ import Business.DB4OUtil.DB4OUtil;
 import Business.Employee.EmployeeDirectory;
 import Business.UserAccount.UserAccount;
 
+import java.util.logging.*;
+
 /**
  *
  * @author sujayghodke
@@ -25,6 +27,9 @@ public class RegisterJPanel extends javax.swing.JPanel {
      */
     JPanel userProcessContainer;
     private AFASystem system;
+    
+    private final static Logger logr = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+    
     public RegisterJPanel(JPanel userProcessContainer,AFASystem system) {
         initComponents();
         this.system = system;
@@ -142,7 +147,7 @@ public class RegisterJPanel extends javax.swing.JPanel {
             }
         }  
         
-        
+        logr.info("New Customer Submitting details Button clicked");
     }//GEN-LAST:event_BtnCreatActionPerformed
 
 
