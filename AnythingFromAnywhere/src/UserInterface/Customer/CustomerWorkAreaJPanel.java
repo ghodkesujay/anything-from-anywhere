@@ -20,6 +20,9 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
+import java.util.logging.*;
+
+
 /**
  *
  * @author sujayghodke
@@ -35,6 +38,8 @@ public class CustomerWorkAreaJPanel extends javax.swing.JPanel {
     private List<Item> l;
     private float sum;
     private UserAccount account;
+    
+    private final static Logger logr = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
     
     public CustomerWorkAreaJPanel(JPanel userProcessContainer, UserAccount account,AFASystem system) {
         initComponents();
@@ -327,6 +332,7 @@ public class CustomerWorkAreaJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Please select an item!!");
         }
         
+        logr.info("Add to cart Button clicked");
     }//GEN-LAST:event_AddbtnActionPerformed
 
     private void NetCobActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NetCobActionPerformed
@@ -386,6 +392,8 @@ public class CustomerWorkAreaJPanel extends javax.swing.JPanel {
         txtCost.setText("");
         sum=0;
         }
+        
+        logr.info("Place Order Button clicked");
     }//GEN-LAST:event_btnOrderActionPerformed
 
     private void btnViewOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewOrderActionPerformed
@@ -394,6 +402,8 @@ public class CustomerWorkAreaJPanel extends javax.swing.JPanel {
         userProcessContainer.add("ViewOrderJPanel",j);
         CardLayout layout=(CardLayout)userProcessContainer.getLayout();
         layout.next(userProcessContainer);
+        
+        logr.info("Order History Button clicked");
     }//GEN-LAST:event_btnViewOrderActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
@@ -413,6 +423,8 @@ public class CustomerWorkAreaJPanel extends javax.swing.JPanel {
         else
         JOptionPane.showMessageDialog(null,"Please select an item first!! ");
         populateCartTable();
+        
+        logr.info("Delete item from cart Button clicked");
     }//GEN-LAST:event_btnDeleteActionPerformed
 
 
