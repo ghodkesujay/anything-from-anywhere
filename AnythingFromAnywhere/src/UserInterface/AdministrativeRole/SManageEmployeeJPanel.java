@@ -15,6 +15,9 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
+import java.util.logging.*;
+
+
 /**
  *
  * @author sujayghodke
@@ -29,6 +32,8 @@ public class SManageEmployeeJPanel extends javax.swing.JPanel {
     private JPanel userProcessContainer;
     private AFASystem system;
     private Enterprise enterprise;
+    
+    private final static Logger logr = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
     /**
      * Creates new form ManageOrganizationJPanel
      */
@@ -213,7 +218,7 @@ public class SManageEmployeeJPanel extends javax.swing.JPanel {
 
     private void addJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addJButtonActionPerformed
 
- Organization organization = (Organization) organizationEmpJComboBox.getSelectedItem();
+        Organization organization = (Organization) organizationEmpJComboBox.getSelectedItem();
         String name = nameJTextField.getText();
 
         boolean exist=false;
@@ -237,6 +242,7 @@ public class SManageEmployeeJPanel extends javax.swing.JPanel {
                 }
         }
 
+        logr.info("Add Employee Button clicked");
     }//GEN-LAST:event_addJButtonActionPerformed
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed

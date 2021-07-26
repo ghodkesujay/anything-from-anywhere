@@ -15,6 +15,9 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
+import java.util.logging.*;
+
+
 /**
  *
  * @author sujayghodke
@@ -24,6 +27,9 @@ public class SManagerWorkAreaJPanel extends javax.swing.JPanel {
     JPanel userProcessContainer;
     Enterprise enterprise;
     AFASystem system;
+    
+    private final static Logger logr = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+    
     /** Creates new form AdminWorkAreaJPanel */
     public SManagerWorkAreaJPanel(JPanel userProcessContainer, Enterprise enterprise,AFASystem system) {
         initComponents();
@@ -384,6 +390,8 @@ public class SManagerWorkAreaJPanel extends javax.swing.JPanel {
         }
         else
         JOptionPane.showMessageDialog(null,"Please select an request!! ");
+        
+        logr.info("Approve Button for Purchase Request clicked");
     }//GEN-LAST:event_btnPApproveActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -402,6 +410,8 @@ public class SManagerWorkAreaJPanel extends javax.swing.JPanel {
         }
         else
         JOptionPane.showMessageDialog(null,"Please select an order to manage ");
+        
+        logr.info("Mark Readt Button for Orders clicked");
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void btnMApproveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMApproveActionPerformed
@@ -422,6 +432,8 @@ public class SManagerWorkAreaJPanel extends javax.swing.JPanel {
         }
         else
         JOptionPane.showMessageDialog(null,"Please select an request!! ");
+        
+        logr.info("Approve Button for Inventory modifying clicked");
     }//GEN-LAST:event_btnMApproveActionPerformed
 
     private void btnMDeclineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMDeclineActionPerformed
