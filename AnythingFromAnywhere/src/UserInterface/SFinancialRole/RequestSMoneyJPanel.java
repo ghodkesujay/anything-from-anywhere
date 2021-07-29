@@ -19,6 +19,9 @@ import java.awt.Component;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
+import java.util.logging.*;
+
+
 /**
  *
  * @author sujayghodke
@@ -33,6 +36,8 @@ public class RequestSMoneyJPanel extends javax.swing.JPanel {
     private Enterprise enterprise;
     private AFASystem system;
     private MoneyOrderDirectory moneyOrderDirectory;
+    private final static Logger logr = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+    
     public RequestSMoneyJPanel(JPanel userProcessContainer, Enterprise enterprise, AFASystem system) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
@@ -205,6 +210,8 @@ public class RequestSMoneyJPanel extends javax.swing.JPanel {
     		
                 JOptionPane.showMessageDialog(null, "Request has been submitted Successfully");}
         txtAmount.setText("");
+        
+        logr.info("Store Money Request Button clicked");
     }//GEN-LAST:event_btnConfirmActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed

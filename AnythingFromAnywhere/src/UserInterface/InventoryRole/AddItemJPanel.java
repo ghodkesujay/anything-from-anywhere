@@ -15,6 +15,8 @@ import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import java.util.logging.*;
+
 
 /**
  *
@@ -29,6 +31,7 @@ public class AddItemJPanel extends javax.swing.JPanel {
     private AFASystem business;
     private Stock menu;
     private Enterprise enterprise;
+    private final static Logger logr = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
     
     public AddItemJPanel(JPanel userProcessContainer, Stock menu, AFASystem business,Enterprise enterprise) {
         initComponents();
@@ -192,7 +195,7 @@ public class AddItemJPanel extends javax.swing.JPanel {
                 
                 }
             
-              
+              logr.info("Add to Inventory Button clicked");
     }//GEN-LAST:event_btnComfirmActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed

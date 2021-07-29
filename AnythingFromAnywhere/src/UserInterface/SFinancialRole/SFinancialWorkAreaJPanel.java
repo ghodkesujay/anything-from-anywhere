@@ -22,6 +22,8 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
+import java.util.logging.*;
+
 
 /**
  *
@@ -35,6 +37,8 @@ public class SFinancialWorkAreaJPanel extends javax.swing.JPanel {
     private AFASystem system;
     private MoneyOrderDirectory moneyOrderDirectory;
     private List<Order> temp;
+    
+    private final static Logger logr = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
             
     public SFinancialWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, AFASystem business) {
         initComponents();
@@ -121,6 +125,11 @@ public class SFinancialWorkAreaJPanel extends javax.swing.JPanel {
         });
 
         btnDecline.setText("Decline");
+        btnDecline.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeclineActionPerformed(evt);
+            }
+        });
 
         valueLabel.setText("<value>");
 
@@ -274,6 +283,7 @@ public class SFinancialWorkAreaJPanel extends javax.swing.JPanel {
         else
         JOptionPane.showMessageDialog(null,"Please select an request!! ");
 
+        logr.info("Approve Purchase Request Button clicked");
     }//GEN-LAST:event_btnApproveActionPerformed
 
     private void txtBalanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBalanceActionPerformed
@@ -288,6 +298,10 @@ public class SFinancialWorkAreaJPanel extends javax.swing.JPanel {
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnRequestMoneyActionPerformed
+
+    private void btnDeclineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeclineActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnDeclineActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -16,6 +16,8 @@ import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
+import java.util.logging.*;
+
 
 /**
  *
@@ -31,6 +33,7 @@ public class InventoryWorkAreaJPanel extends javax.swing.JPanel {
     private Enterprise enterprise;
     private UserAccount userAccount;
     private AFASystem business;
+    private final static Logger logr = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
   
     public InventoryWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, InventoryOrganization cookOrganization, Enterprise enterprise, AFASystem business) {
@@ -234,6 +237,7 @@ public class InventoryWorkAreaJPanel extends javax.swing.JPanel {
         } else
         JOptionPane.showMessageDialog(null, "Please select any row");
         
+        logr.info("Modify Stock Request Button clicked");
     }//GEN-LAST:event_btnModifyMenuActionPerformed
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
@@ -243,6 +247,7 @@ public class InventoryWorkAreaJPanel extends javax.swing.JPanel {
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
         //populateTable1();
+        logr.info("Add item Button clicked");
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed

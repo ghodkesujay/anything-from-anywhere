@@ -15,6 +15,8 @@ import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
+import java.util.logging.*;
+
 /**
  *
  * @author Lingfeng
@@ -26,6 +28,9 @@ public class MainJFrame extends javax.swing.JFrame {
      */
     private AFASystem system;
     private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
+    
+    //Logger String
+    private final static Logger logr = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
     public MainJFrame() {
         initComponents();
@@ -225,6 +230,8 @@ public class MainJFrame extends javax.swing.JFrame {
         logoutJButton.setEnabled(true);
         userNameJTextField.setEnabled(false);
         passwordField.setEnabled(false);
+        
+        logr.info("Login Button clicked");
     }//GEN-LAST:event_loginJButtonActionPerformed
 
     private void logoutJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutJButtonActionPerformed
@@ -242,6 +249,8 @@ public class MainJFrame extends javax.swing.JFrame {
         CardLayout crdLyt = (CardLayout) container.getLayout();
         crdLyt.next(container);
         dB4OUtil.storeSystem(system);
+        
+        logr.info("Logout Button clicked");
     }//GEN-LAST:event_logoutJButtonActionPerformed
 
     private void BtnRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnRegisterActionPerformed
@@ -252,6 +261,8 @@ public class MainJFrame extends javax.swing.JFrame {
         container.add("manageOrganizationJPanel", manageOrganizationJPanel);
         
         layout.next(container);
+        
+        logr.info("New Customer SignUp Button clicked");
     }//GEN-LAST:event_BtnRegisterActionPerformed
 
     /**

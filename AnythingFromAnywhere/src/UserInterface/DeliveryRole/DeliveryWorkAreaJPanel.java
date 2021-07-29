@@ -19,6 +19,9 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
+import java.util.logging.*;
+
+
 /**
  *
  * @author sujayghodke
@@ -36,6 +39,9 @@ public class DeliveryWorkAreaJPanel extends javax.swing.JPanel {
     private Enterprise enterprise;
     private UserAccount userAccount;
     private AFASystem system;
+    
+    private final static Logger logr = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+    
     public DeliveryWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise,AFASystem system) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
@@ -272,6 +278,8 @@ public class DeliveryWorkAreaJPanel extends javax.swing.JPanel {
         }
         else
         JOptionPane.showMessageDialog(null,"Please select an order ");
+        
+        logr.info("Take the Order Button clicked");
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -304,6 +312,8 @@ public class DeliveryWorkAreaJPanel extends javax.swing.JPanel {
         }
         else
         JOptionPane.showMessageDialog(null,"Please select an order ");
+        
+        logr.info("Mark Delivered Button clicked");
     }//GEN-LAST:event_jButton2ActionPerformed
 
 
